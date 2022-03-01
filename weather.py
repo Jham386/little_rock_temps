@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 def sort_data():
     all_data = []
     with open("/home/julia/Textfiles/temp_data.txt", 'r') as file:
+        next(file)
         for line in file:
             day = [item.strip() for item in line.split()]
             all_data.append(day)
@@ -23,7 +24,7 @@ def sort_data():
             all_data[date][value] = int(all_data[date][value])
     for date in range(total_days):
             all_data[date][3] = float(all_data[date][3])
-    
+            
     #Stores dates, high, low, and average temp data into seperate numpy arrays
     dates = []
     highs = np.array([], dtype = int)
@@ -35,9 +36,48 @@ def sort_data():
         highs = np.append(highs, all_data[date][1])
         lows = np.append(lows, all_data[date][2])
         averages = np.append(averages, all_data[date][3])
+
+    return all_data, highs, lows, averages, dates
+
+#Gets record high and lows
+def get_records(highs, lows, dates):
+    
+    lowest_low = 0
+    highest_high = 0
+    #Day/s the lowest low and highest high occured
+    hh_day = 0
+    ll_day = 0
+    #Variable for date format from dates
+    ll_date = []
+    hh_date = []
+
+    for high in highs:
+        if high > highest_high:
+            highest_high = high
+
+    hh_day = np.argwhere(highs == highest_high)
+
+    for low in lows:
+        if low < lowest_low:
+            lowest_low = low
+
+    ll_day = np.argwhere(lows == lowest_low)
+    print(ll_day)
+    print(hh_day)
+
+    #Find proper date format
+    for array in ll_day:
+        for day in array:
+            ll_date.append(dates[day])
+    for array in hh_day:
+        for day in array:
+            hh_date.append(dates[day])
+    print(ll_date)
+    print(hh_date)
     
 def main():
-    weather_arrays = sort_data()
-    
+    day_array, high_array, low_array, average_array, date_array = sort_data()
+    get_records(high_array, low_array, date_array)
+
 main()
 
