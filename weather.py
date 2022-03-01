@@ -14,22 +14,28 @@ def sort_data():
     #Neats up list, removing \t and \n
     all_data = [item for item in all_data if item not in ['\n', '\t']]
 
-    #Converts high, low, and averages into int, int, and float respectively
-    all_data = [list(map(int, item) for item in all_data[:][0:3])]
+    #Gets total number of days (aka lists) in all_data
+    total_days = len(all_data)
     
-    print(all_data)
+    #Converts highs, lows, and averages into int, int, and float respectively
+    for date in range(total_days):
+        for value in range(1,3):
+            all_data[date][value] = int(all_data[date][value])
+    for date in range(total_days):
+            all_data[date][3] = float(all_data[date][3])
+    
     #Stores dates, high, low, and average temp data into seperate numpy arrays
     dates = []
-    highs = np.empty(1, dtype = int)
-    lows = np.empty(1, dtype = int)
-    averages = np.empty(1)
+    highs = np.array([], dtype = int)
+    lows = np.array([], dtype = int)
+    averages = np.array([], dtype = float)
 
-    for value in all_data:
-        dates.append(all_data[0])
-        highs = np.append(all_data[1], highs)
-        lows = np.append(all_data[2], lows)
-        averages = np.append(all_data[3], averages)
-        
+    for date in range(total_days):
+        dates.append(all_data[date][0])
+        highs = np.append(highs, all_data[date][1])
+        lows = np.append(lows, all_data[date][2])
+        averages = np.append(averages, all_data[date][3])
+    
 def main():
     weather_arrays = sort_data()
     
