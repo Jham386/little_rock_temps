@@ -42,6 +42,7 @@ def sort_data():
 #Gets record high and lows
 def get_records(highs, lows, dates):
     
+    #Lowest, highest temp
     lowest_low = 0
     highest_high = 0
     #Day/s the lowest low and highest high occured
@@ -62,8 +63,6 @@ def get_records(highs, lows, dates):
             lowest_low = low
 
     ll_day = np.argwhere(lows == lowest_low)
-    print(ll_day)
-    print(hh_day)
 
     #Find proper date format
     for array in ll_day:
@@ -72,12 +71,46 @@ def get_records(highs, lows, dates):
     for array in hh_day:
         for day in array:
             hh_date.append(dates[day])
-    print(ll_date)
-    print(hh_date)
+
+    return lowest_low, ll_date, highest_high, hh_date
+
+#Get's yearly highs
+def get_yearly_records(highs, lows, dates):
+
+    #Substitute variables, will loop through highs and lows and get rid of 50 value (will be higher than 50 and lower than 50 for all years)
+    h = 50
+    l = 50
+    yearly_records = dict({2000: [h, l], 2001: [h, l], 2002: [h, l], 2003: [h, l], 2004: [h, l], 2005: [h, l], 2006: [h, l], 2007: [h, l], 2008: [h, l], 2009: [h, l], 2010: [h, l], 2011: [h, l], 2012: [h, l], 2013: [h, l], 2014: [h, l], 2015: [h, l], 2016: [h, l], 2017: [h, l], 2018: [h, l], 2019: [h, l], 2020: [h, l], 2021: [h, l], 2022: [h, l]})
+
+    #Leap years: 2000, 2004, 2008, 2012, 2016, 2020 (has 366 days, not 365)
+    counter = 0
+    year = 2000
+    
+    elif year % 4 == 0:
+        counter2 = 1
+    else:
+        counter2 = 0
+    
+    while counter < len(dates):
+        for value in range(counter, (counter*2 + counter2)):
+            if highs[value] > yearly_records[year][0]:
+                yearly_records[year][0] = highs[value]
+            if lows[value] < yearly_records[year][1]:
+                yearly_records[year][1] = lows[value]
+
+        counter = counter + (365 + counter2)
+        if counter > 365:
+            year += 1
+        else:
+            year = 2000
+
+    print(yearly_records[2011][0])
+    return yearly_records
     
 def main():
     day_array, high_array, low_array, average_array, date_array = sort_data()
-    get_records(high_array, low_array, date_array)
+    record_low, low_date, record_high, high_date = get_records(high_array, low_array, date_array)
+    year_records = get_yearly_records(high_array, low_array, date_array)
 
 main()
 
