@@ -1,3 +1,4 @@
+
 ##Takes in daily Little Rock area temperatures from 2000 to 2022, graphs, and gets major temp events.
 import numpy as np
 import matplotlib as mpl
@@ -86,31 +87,33 @@ def get_yearly_records(highs, lows, dates):
     counter = 0
     year = 2000
     
-    elif year % 4 == 0:
-        counter2 = 1
-    else:
-        counter2 = 0
-    
     while counter < len(dates):
-        for value in range(counter, (counter*2 + counter2)):
+
+        if year % 4 == 0:
+            counter2 = 1
+        else:
+            counter2 = 0
+        if year == 2022:
+            counter1 = 31 #Only Jan. data in 2022
+        else:
+            counter1 = 365
+            
+        for value in range(counter, (counter + counter1 + counter2)):
             if highs[value] > yearly_records[year][0]:
                 yearly_records[year][0] = highs[value]
             if lows[value] < yearly_records[year][1]:
                 yearly_records[year][1] = lows[value]
-
-        counter = counter + (365 + counter2)
-        if counter > 365:
-            year += 1
-        else:
-            year = 2000
-
-    print(yearly_records[2011][0])
+        counter = counter + counter1 + counter2
+        year += 1
+            
     return yearly_records
-    
+
+#Executes all functions
 def main():
     day_array, high_array, low_array, average_array, date_array = sort_data()
     record_low, low_date, record_high, high_date = get_records(high_array, low_array, date_array)
     year_records = get_yearly_records(high_array, low_array, date_array)
 
+#Swings the axe, executes main()
 main()
 
