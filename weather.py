@@ -108,11 +108,56 @@ def get_yearly_records(highs, lows, dates):
             
     return yearly_records
 
+def graph_highs_lows(yearly_records, record_high, record_low, highs, lows):
+    #Split up data so can graph it
+    x_axis = list(dict.keys(yearly_records))
+
+    #Exclude 2022, since not complete
+    x_axis.remove(2022) 
+
+    series1 = []
+    series2 = []
+    for year in yearly_records:
+        if year == 2022:
+            break
+        else:
+            series1.append(yearly_records[year][0])
+            series2.append(yearly_records[year][1])
+    
+    fig1,ax1 = plt.subplots()
+    ax1.scatter(x_axis, series1, label = "Yearly Highs", color = "red")
+    ax1.legend()
+    ax1.set_title("Record Yearly Highs")
+    ax1.set_xlabel("Years, 2000 - 2021")
+    ax1.set_xticks(np.arange(2000, 2021, 2))
+    ax1.set_ylabel("Temperature in Farenheit")
+    fig1.savefig("Highs.png")
+
+    fig2, ax2 = plt.subplots()
+    ax2.scatter(x_axis, series2, label = "Yearly Lows", color = "blue")
+    ax2.set_title("Record Yearly Lows")
+    ax2.set_xlabel("Years, 2000 - 2021")
+    ax2.set_xticks(np.arange(2000,2021, 2))
+    ax2.set_ylabel("Temperature in Farenheit")
+    fig2.savefig("Lows.png")
+    
+def graph_averages(averages, dates):
+    
+    fig3, ax3 = plt.subplots()
+    ax3.plot(range(0, len(dates)), averages, color = "orange")
+    ax3.set_title("Daily Averages from 2000 - Jan, 2022")
+    ax3.set_xlabel("Days, from Jan 1st, 2000 - Jan 31st, 2022") 
+    ax3.set_ylabel("Temperature in Farenheit")
+    fig3.savefig("Averages.png")
+    
+
 #Executes all functions
 def main():
-    day_array, high_array, low_array, average_array, date_array = sort_data()
+    day_array, high_array, low_array, average_array, date_array = sort_data()    
     record_low, low_date, record_high, high_date = get_records(high_array, low_array, date_array)
     year_records = get_yearly_records(high_array, low_array, date_array)
+    records_graph = graph_highs_lows(year_records, record_high, record_low, high_array, low_array)
+    average_graph = graph_averages(average_array, date_array)
 
 #Swings the axe, executes main()
 main()
