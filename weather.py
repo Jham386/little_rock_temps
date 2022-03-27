@@ -75,7 +75,7 @@ def get_records(highs, lows, dates):
 
     return lowest_low, ll_date, highest_high, hh_date
 
-#Get's yearly highs
+#Get's yearly highs and lows
 def get_yearly_records(highs, lows, dates):
 
     #Substitute variables, will loop through highs and lows and get rid of 50 value (will be higher than 50 and lower than 50 for all years)
@@ -123,7 +123,8 @@ def graph_highs_lows(yearly_records, record_high, record_low, highs, lows):
         else:
             series1.append(yearly_records[year][0])
             series2.append(yearly_records[year][1])
-    
+
+    #High plot
     fig1,ax1 = plt.subplots()
     ax1.scatter(x_axis, series1, label = "Yearly Highs", color = "red")
     ax1.legend()
@@ -133,6 +134,7 @@ def graph_highs_lows(yearly_records, record_high, record_low, highs, lows):
     ax1.set_ylabel("Temperature in Farenheit")
     fig1.savefig("Highs.png")
 
+    #Low plot
     fig2, ax2 = plt.subplots()
     ax2.scatter(x_axis, series2, label = "Yearly Lows", color = "blue")
     ax2.set_title("Record Yearly Lows")
@@ -142,7 +144,8 @@ def graph_highs_lows(yearly_records, record_high, record_low, highs, lows):
     fig2.savefig("Lows.png")
     
 def graph_averages(averages, dates):
-    
+
+    #Graphs averages over 2000 - Jan. 2022
     fig3, ax3 = plt.subplots()
     ax3.plot(range(0, len(dates)), averages, color = "orange")
     ax3.set_title("Daily Averages from 2000 - Jan, 2022")
