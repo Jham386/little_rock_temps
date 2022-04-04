@@ -1,13 +1,13 @@
-
-##Takes in daily Little Rock area temperatures from 2000 to 2022, graphs, and gets major temp events.
+#Takes in daily Little Rock area temperatures from 2000 to 2022, graphs, and gets major temp events.
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 #Opens text file, sorts day data line by line into array, sorts array into huge array
 def sort_data():
+
     all_data = []
-    with open("/home/julia/Textfiles/temp_data.txt", 'r') as file:
+    with open("temp_data.txt", 'r') as file:
         next(file)
         for line in file:
             day = [item.strip() for item in line.split()]
@@ -15,8 +15,6 @@ def sort_data():
 
     #Neats up list, removing \t and \n
     all_data = [item for item in all_data if item not in ['\n', '\t']]
-
-    #Gets total number of days (aka lists) in all_data
     total_days = len(all_data)
     
     #Converts highs, lows, and averages into int, int, and float respectively
@@ -43,7 +41,6 @@ def sort_data():
 #Gets record high and lows
 def get_records(highs, lows, dates):
     
-    #Lowest, highest temp
     lowest_low = 0
     highest_high = 0
     #Day/s the lowest low and highest high occured
@@ -58,7 +55,7 @@ def get_records(highs, lows, dates):
             highest_high = high
 
     hh_day = np.argwhere(highs == highest_high)
-
+    
     for low in lows:
         if low < lowest_low:
             lowest_low = low
@@ -73,6 +70,11 @@ def get_records(highs, lows, dates):
         for day in array:
             hh_date.append(dates[day])
 
+    for date in range(len(ll_date)):
+        print("Lowest temperature on record: " + str(lowest_low) + " degrees Farenheit, on " + ll_date[date])
+    for date in range(len(hh_date)):
+        print("Highest temperature on record: " + str(highest_high) + " degrees Farenheit, on " + hh_date[date])
+    
     return lowest_low, ll_date, highest_high, hh_date
 
 #Get's yearly highs and lows
@@ -105,13 +107,13 @@ def get_yearly_records(highs, lows, dates):
                 yearly_records[year][1] = lows[value]
         counter = counter + counter1 + counter2
         year += 1
-            
+    
     return yearly_records
 
-def graph_highs_lows(yearly_records, record_high, record_low, highs, lows):
-    #Split up data so can graph it
-    x_axis = list(dict.keys(yearly_records))
+#Graphs yearly highs and lows in seperate charts
+def graph_highs_lows(yearly_records, highs, lows):
 
+    x_axis = list(dict.keys(yearly_records))
     #Exclude 2022, since not complete
     x_axis.remove(2022) 
 
@@ -127,12 +129,17 @@ def graph_highs_lows(yearly_records, record_high, record_low, highs, lows):
     #High plot
     fig1,ax1 = plt.subplots()
     ax1.scatter(x_axis, series1, label = "Yearly Highs", color = "red")
-    ax1.legend()
     ax1.set_title("Record Yearly Highs")
     ax1.set_xlabel("Years, 2000 - 2021")
     ax1.set_xticks(np.arange(2000, 2021, 2))
-    ax1.set_ylabel("Temperature in Farenheit")
-    fig1.savefig("Highs.png")
+    ax1.set_ylabel("Temperature ($^\circ$F)")
+    #Adds trendline
+    q = np.polyfit(x_axis, series1, 1)
+    w = np.poly1d(q)
+    ax1.plot(x_axis, w(x_axis), label = "Trendline", color = "red")
+    #Adds legend, saves figure
+    ax1.legend()
+    fig1.savefig("images/Highs.png")
 
     #Low plot
     fig2, ax2 = plt.subplots()
@@ -140,28 +147,34 @@ def graph_highs_lows(yearly_records, record_high, record_low, highs, lows):
     ax2.set_title("Record Yearly Lows")
     ax2.set_xlabel("Years, 2000 - 2021")
     ax2.set_xticks(np.arange(2000,2021, 2))
-    ax2.set_ylabel("Temperature in Farenheit")
-    fig2.savefig("Lows.png")
-    
+    ax2.set_ylabel("Temperature ($^\circ$F)")
+    u = np.polyfit(x_axis, series2, 1)
+    i = np.poly1d(u)
+    ax2.plot(x_axis, i(x_axis), label = "Trendline", color = "blue")
+    ax2.legend()
+    fig2.savefig("images/Lows.png")
+
+#Graphs daily averages from 2000 - Jan. 2022
 def graph_averages(averages, dates):
 
-    #Graphs averages over 2000 - Jan. 2022
+    labels = [2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022]
     fig3, ax3 = plt.subplots()
-    ax3.plot(range(0, len(dates)), averages, color = "orange")
+    ax3.plot(dates, averages, color = "orange")
     ax3.set_title("Daily Averages from 2000 - Jan, 2022")
     ax3.set_xlabel("Days, from Jan 1st, 2000 - Jan 31st, 2022") 
-    ax3.set_ylabel("Temperature in Farenheit")
-    fig3.savefig("Averages.png")
+    ax3.set_ylabel("Temperature ($^\circ$F)")
+    ax3.set_xticks(np.arange(0, len(dates), 731))
+    ax3.set_xticklabels(labels) 
+    fig3.savefig("images/Averages.png")
     
-
 #Executes all functions
 def main():
-    day_array, high_array, low_array, average_array, date_array = sort_data()    
+    day_array, high_array, low_array, average_array, date_array = sort_data()
     record_low, low_date, record_high, high_date = get_records(high_array, low_array, date_array)
     year_records = get_yearly_records(high_array, low_array, date_array)
-    records_graph = graph_highs_lows(year_records, record_high, record_low, high_array, low_array)
-    average_graph = graph_averages(average_array, date_array)
-
+    graph_highs_lows(year_records, high_array, low_array)
+    graph_averages(average_array, date_array)
+    
 #Swings the axe, executes main()
 main()
 

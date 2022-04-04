@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{url}
+\usepackage{hyperref}
+\graphicspath{ {./images/} }
+
+\begin{document}
+\title{Graphing and Analyzing Little-Rock Temperatures, 2000 - 2022}
+\author{Julia Hambuchen}
+\date{April 4th, 2022}
+\maketitle
+
+\begin{abstract}
+This report describes the process and results of analyzing around 20 years of weather data from Little Rock, Arkansas, USA. The data initally gathered gives the high, low, and average temperature of each day from January 1st, 2000 to January 1st, 2022. Sorting this data in Python, the record highs and lows are grabbed from these 22 years and the highs, lows, and averages are graphed respectively.
+\end{abstract}
+
+\section{Introduction}
+\input{introduction.tex}
+
+\section{Graphs for Yearly Record Temperatures}
+\input{graphs_highs_lows.tex}
+
+\section{Graphs for Average Temperatures over Time}
+\input{graph_averages.tex}
+
+\section{Conclusions}
+\input{conclusions.tex}
+
+\bibliographystyle{plain}
+\bibliography{weather_bib}
+
+\end{document}
