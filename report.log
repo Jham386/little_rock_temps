@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.3)  4 APR 2022 14:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.3)  4 APR 2022 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -72,10 +72,6 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip16
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
 
@@ -139,6 +135,11 @@ Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
 \c@Hy@tempcnt=\count182
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 LaTeX Info: Redefining \url on input line 5159.
 \XeTeXLinkMargin=\dimen146
 
@@ -200,22 +201,22 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -274,7 +275,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box47
-Package hyperref Info: Link coloring OFF on input line 9.
+Package hyperref Info: Link coloring OFF on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -287,44 +288,34 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count196
 )
-LaTeX Info: Redefining \ref on input line 9.
-LaTeX Info: Redefining \pageref on input line 9.
-LaTeX Info: Redefining \nameref on input line 9.
+LaTeX Info: Redefining \ref on input line 8.
+LaTeX Info: Redefining \pageref on input line 8.
+LaTeX Info: Redefining \nameref on input line 8.
 
 (./report.out) (./report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 14.
+(Font)              <12> on input line 13.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 14.
+(Font)              <8> on input line 13.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 14.
- (./introduction.tex
-
-LaTeX Warning: Citation `NOWData' on page 1 undefined on input line 1.
-
-
-LaTeX Warning: Citation `weather_vs_climate' on page 1 undefined on input line 
-1.
-
-) (./graphs_highs_lows.tex
-
-LaTeX Warning: Citation `historic_high' on page 1 undefined on input line 1.
-
-<./images/Highs.png, id=20, 462.528pt x 346.896pt>
+(Font)              <6> on input line 13.
+ (./introduction.tex) (./graphs_highs_lows.tex
+<./images/Highs.png, id=23, 462.528pt x 346.896pt>
 File: ./images/Highs.png Graphic file (type png)
 <use ./images/Highs.png>
 Package pdftex.def Info: ./images/Highs.png  used on input line 5.
 (pdftex.def)             Requested size: 370.02289pt x 277.51717pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<./images/Lows.png, id=34, 462.528pt x 346.896pt>
+<./images/Lows.png, id=39, 462.528pt x 346.896pt>
 File: ./images/Lows.png Graphic file (type png)
 <use ./images/Lows.png>
 Package pdftex.def Info: ./images/Lows.png  used on input line 13.
@@ -334,59 +325,44 @@ Package pdftex.def Info: ./images/Lows.png  used on input line 13.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2 <./images/Highs.png> <./images/Lows.png>]) (./graph_averages.tex
-<./images/Averages.png, id=43, 462.528pt x 346.896pt>
+<./images/Averages.png, id=48, 462.528pt x 346.896pt>
 File: ./images/Averages.png Graphic file (type png)
 <use ./images/Averages.png>
 Package pdftex.def Info: ./images/Averages.png  used on input line 5.
 (pdftex.def)             Requested size: 370.02289pt x 277.51717pt.
 )
-(./conclusions.tex
-
-LaTeX Warning: Citation `el_la_nino_nina' on page 3 undefined on input line 1.
-
-
-LaTeX Warning: Citation `weather_vs_climate' on page 3 undefined on input line 
-1.
-
-) (./report.bbl [3
+(./conclusions.tex) (./report.bbl [3
 
  <./images/Averages.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
  [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
- (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 34.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
+
+(./report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 24D9EAF083EFAA08649097D0C2F116AF;241.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33.
  ) 
 Here is how much of TeX's memory you used:
- 5720 strings out of 483183
- 88106 string characters out of 5966293
- 348349 words of memory out of 5000000
- 20619 multiletter control sequences out of 15000+600000
- 536893 words of font info for 39 fonts, out of 8000000 for 9000
+ 5718 strings out of 483183
+ 88085 string characters out of 5966293
+ 348482 words of memory out of 5000000
+ 20618 multiletter control sequences out of 15000+600000
+ 536585 words of font info for 38 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,6n,34p,1151b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr9.pfb>
-Output written on report.pdf (4 pages, 174218 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on report.pdf (4 pages, 165528 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  17 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
