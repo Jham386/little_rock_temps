@@ -1,4 +1,4 @@
-#Takes in daily Little Rock area temperatures from 2000 to 2022, graphs, and gets major temp events.
+#Takes in daily little rock temperatures
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
