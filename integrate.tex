@@ -1,0 +1,18 @@
+With the weather data, we used two techniques to integrate the high, low, and average data series and see how they compare with eachother. While integrating temperatures doesn't make much sense, it's mainly to learn and compare techniques. Both ways use the trapezoidal method for integrating data. They use the sum:
+\begin{equation}
+  I = \sum_{n=0}^{n-1} (x[n+1] - x[n]) * 1/2 *(y[n+1] + y[n])
+\end{equation}
+
+For the first way, we manually write the code to use the sum. I used a while loop in the file my\_intg.py to go through the data and accumulate the result into the final answer. After the loop is done, it prints the result. The other file, nmpy\_intg.py, takes in and sorts the data in the same way my\_intg.py does, but after, just uses the pre-compiled numpy function numpy.trapz() to compute the integral. Both methods produced the same result, but the numpy function method did it a little faster. The integration results are below:
+\\ 
+\\numpy.trapz():
+\\Daily highs: 591,124.5
+\\Daily lows: 424,357.0
+\\Daily averages: 507,740.75
+\\
+\\Our sum:
+\\Daily highs: 591, 124.5
+\\Dailys lows: 424, 357.0
+\\Daily averages: 507,740.75
+\\ 
+\\So all the integrals were the the same (at least until the tenths place). Running it five times, the numpy function was always faster. The difference in speeds between the numpy function and mine spanned from .051 seconds faster to .026 seconds faster. While the code we write has to be compiled before execution, the numpy function is pre-compiled upon installation. So usually, going with pre-built functions is the way to go in terms of speed!

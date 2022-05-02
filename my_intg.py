@@ -22,13 +22,11 @@ def sort_data():
         all_data[date][3] = float(all_data[date][3])
 
     #Stores dates, high, low, and average temp data into seperate numpy arrays
-    dates = []
     highs = np.array([], dtype = int)
     lows = np.array([], dtype = int)
     averages = np.array([], dtype = float)
 
     for date in range(total_days):
-        dates.append(all_data[date][0])
         highs = np.append(highs, all_data[date][1])
         lows = np.append(lows, all_data[date][2])
         averages = np.append(averages, all_data[date][3])

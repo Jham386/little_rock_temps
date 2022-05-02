@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.3)  4 APR 2022 20:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.3)  1 MAY 2022 23:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -303,7 +303,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 13.
  (./introduction.tex) (./graphs_highs_lows.tex
-<./images/Highs.png, id=23, 462.528pt x 346.896pt>
+<./images/Highs.png, id=27, 462.528pt x 346.896pt>
 File: ./images/Highs.png Graphic file (type png)
 <use ./images/Highs.png>
 Package pdftex.def Info: ./images/Highs.png  used on input line 5.
@@ -315,7 +315,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<./images/Lows.png, id=39, 462.528pt x 346.896pt>
+<./images/Lows.png, id=43, 462.528pt x 346.896pt>
 File: ./images/Lows.png Graphic file (type png)
 <use ./images/Lows.png>
 Package pdftex.def Info: ./images/Lows.png  used on input line 13.
@@ -325,44 +325,69 @@ Package pdftex.def Info: ./images/Lows.png  used on input line 13.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2 <./images/Highs.png> <./images/Lows.png>]) (./graph_averages.tex
-<./images/Averages.png, id=48, 462.528pt x 346.896pt>
+<./images/Averages.png, id=52, 462.528pt x 346.896pt>
 File: ./images/Averages.png Graphic file (type png)
 <use ./images/Averages.png>
 Package pdftex.def Info: ./images/Averages.png  used on input line 5.
 (pdftex.def)             Requested size: 370.02289pt x 277.51717pt.
 )
-(./conclusions.tex) (./report.bbl [3
+(./integrate.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 6--29
 
- <./images/Averages.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--29
+
+ []
+
+[3
+
+ <./images/Averages.png>] (./conclusions.tex) (./report.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
  [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
 
 (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 24D9EAF083EFAA08649097D0C2F116AF;241.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33.
+(rerunfilecheck)             Checksum: B932F2A76BFF298EA520FDD39AC6CC7F;298.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 5718 strings out of 483183
- 88085 string characters out of 5966293
+ 5728 strings out of 483183
+ 88213 string characters out of 5966293
  348482 words of memory out of 5000000
- 20618 multiletter control sequences out of 15000+600000
+ 20623 multiletter control sequences out of 15000+600000
  536585 words of font info for 38 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,6n,34p,1151b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,6n,34p,1151b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on report.pdf (4 pages, 165528 bytes).
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on report.pdf (4 pages, 212910 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 119 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
